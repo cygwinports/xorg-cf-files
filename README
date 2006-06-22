@@ -162,6 +162,9 @@ Files included in the binary package:
 
 Port Notes:
 
+----- version 1.0.2-2 -----
+Fixes for a few Cygwin options which have changed with modular X11.
+
 ----- version 1.0.2-1 -----
 X11R7.1 version bump.
 
