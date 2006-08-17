@@ -1,0 +1,86 @@
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x Makefile.in.in -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x gnome-doc-utils.make -x intltool.m4 -x omf.make -x xmldocs.make origsrc/xorg-cf-files-1.0.2/cygwin.cf src/xorg-cf-files-1.0.2/cygwin.cf
+--- origsrc/xorg-cf-files-1.0.2/cygwin.cf	2005-07-06 04:47:49.000000000 -0500
++++ src/xorg-cf-files-1.0.2/cygwin.cf	2006-08-17 15:15:00.795000000 -0500
+@@ -62,12 +62,10 @@
+ # define OSTeenyVersion		DefaultOSTeenyVersion
+ #endif
+ 
+-#ifndef ProjectRoot
+-# define ProjectRoot 		/usr/X11R6
+-#endif
+-
+ #if !CrossCompiling
++#ifndef HasGcc2
+ # define HasGcc2		YES
++#endif /* HasGcc2 */
+ #endif /* !CrossCompiling */
+ #define HasGcc2ForCplusplus	YES
+ #define GccUsesGas		YES
+@@ -104,9 +102,6 @@
+ #define HasSockets		YES
+ #define GzipFontCompression	YES
+ #define HasZlib			YES
+-#ifndef GzipLibrary
+-# define GzipLibrary		-lz.dll
+-#endif
+ 
+ /* We don't need -lm */
+ #define MathLibrary		/**/
+@@ -115,7 +110,7 @@
+  * /lib/libtermcap.a doesn't have tgetent, which is needed for
+  * xc/programs/xterm/resize.exe
+  */
+-#define TermcapLibrary		-lncurses.dll
++#define TermcapLibrary		-lncurses
+ 
+ #define AvoidNullMakeCommand	YES
+ #define StripInstalledPrograms	YES
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x Makefile.in.in -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x gnome-doc-utils.make -x intltool.m4 -x omf.make -x xmldocs.make origsrc/xorg-cf-files-1.0.2/cygwin.rules src/xorg-cf-files-1.0.2/cygwin.rules
+--- origsrc/xorg-cf-files-1.0.2/cygwin.rules	2005-05-19 13:53:42.000000000 -0500
++++ src/xorg-cf-files-1.0.2/cygwin.rules	2006-08-17 15:15:14.591875000 -0500
+@@ -14,7 +14,7 @@
+ #define SharedLibXaw		YES
+ #define SharedLibXmu		YES
+ #define SharedLibXt		YES
+-#define SharedLibFont		NO
++#define SharedLibFont		YES
+ #define SharedLibXaw7		YES
+ #define SharedLibXaw6		YES
+ #define SharedLibSM		YES
+@@ -28,7 +28,7 @@
+ #define SharedLibDps		YES
+ #define SharedLibDpsTk		YES
+ #define SharedLibGlu		YES
+-#define SharedLibWindowsWM	NO
++#define SharedLibWindowsWM	YES
+ #ifndef SharedDataSeparation
+ #define SharedDataSeparation	NO
+ #endif
+@@ -59,7 +59,7 @@
+ Concat3(cyg,libname,-$(shell echo rev|sed s=\\..*==).dll)
+ 
+ #define ImportLibraryName(libname, rev) \
+-Concat3(lib,libname,-$(shell echo rev|sed s=\\..*==).dll.a)
++Concat3(lib,libname,.dll.a)
+ 
+ #define ShortImportLibraryName(libname, rev) \
+ Concat3(lib,libname,.dll.a)
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x Makefile.in.in -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x gnome-doc-utils.make -x intltool.m4 -x omf.make -x xmldocs.make origsrc/xorg-cf-files-1.0.2/cygwin.tmpl src/xorg-cf-files-1.0.2/cygwin.tmpl
+--- origsrc/xorg-cf-files-1.0.2/cygwin.tmpl	2005-05-19 13:53:42.000000000 -0500
++++ src/xorg-cf-files-1.0.2/cygwin.tmpl	2006-08-17 15:13:47.201250000 -0500
+@@ -54,11 +54,14 @@
+ XMULIB = $(XMULIBONLY) $(XTOOLLIB) $(XLIB)
+ #endif
+ 
++XAWLIB = -lXaw8
++XAW7LIB = -lXaw7
++XAW6LIB = -lXaw6
++
+ #ifndef XawClientLibs
+ # define XawClientLibs $(XAWLIB) $(XMULIBONLY) $(XTOOLLIB) $(XPMLIB) $(EXTRAXAWCLIENTLIBS) $(XLIB)
+ #endif
+ 
+-
+ /*
+  * Suffix for Windows resource source files
+  */
