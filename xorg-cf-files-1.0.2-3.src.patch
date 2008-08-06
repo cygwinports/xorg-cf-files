@@ -1,4 +1,3 @@
-diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x Makefile.in.in -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x gnome-doc-utils.make -x intltool.m4 -x omf.make -x xmldocs.make origsrc/xorg-cf-files-1.0.2/cygwin.cf src/xorg-cf-files-1.0.2/cygwin.cf
 --- origsrc/xorg-cf-files-1.0.2/cygwin.cf	2005-07-06 04:47:49.000000000 -0500
 +++ src/xorg-cf-files-1.0.2/cygwin.cf	2006-08-17 18:37:38.021750000 -0500
 @@ -62,12 +62,10 @@
@@ -35,7 +34,6 @@ diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depco
  
  #define AvoidNullMakeCommand	YES
  #define StripInstalledPrograms	YES
-diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x Makefile.in.in -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x gnome-doc-utils.make -x intltool.m4 -x omf.make -x xmldocs.make origsrc/xorg-cf-files-1.0.2/cygwin.rules src/xorg-cf-files-1.0.2/cygwin.rules
 --- origsrc/xorg-cf-files-1.0.2/cygwin.rules	2005-05-19 13:53:42.000000000 -0500
 +++ src/xorg-cf-files-1.0.2/cygwin.rules	2006-08-17 18:38:56.849875000 -0500
 @@ -14,7 +14,7 @@
@@ -75,7 +73,6 @@ diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depco
  
  
  /*
-diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x ltmain.sh -x 'config.*' -x depcomp -x install-sh -x missing -x mkinstalldirs -x autom4te.cache -x '*compile' -x Makefile.in.in -x 'intltool*.in' -x 'xml-i18n-*.in' -x '*.pyc' -x '*.mo' -x '*.gmo' -x ABOUT-NLS -x Makevars.template -x COPYING -x INSTALL -x '*.orig' -x '*.rej' -x '*~' -x '*.temp' -x texinfo.tex -x ylwrap -x Makefile.in -x makefile.in -x configure -x gnome-doc-utils.make -x intltool.m4 -x omf.make -x xmldocs.make origsrc/xorg-cf-files-1.0.2/cygwin.tmpl src/xorg-cf-files-1.0.2/cygwin.tmpl
 --- origsrc/xorg-cf-files-1.0.2/cygwin.tmpl	2005-05-19 13:53:42.000000000 -0500
 +++ src/xorg-cf-files-1.0.2/cygwin.tmpl	2006-08-17 18:37:38.068625000 -0500
 @@ -54,11 +54,14 @@
