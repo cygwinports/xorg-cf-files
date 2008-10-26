@@ -1,19 +1,19 @@
 xorg-cf-files
 ------------------------------------------
-Xorg Imake config files
+X.Org Imake config files
 
 Build requirements:
-  cygwin-1.5.21-1
-  cygport-0.2.5-1
-  gawk-3.1.5-2
+  cygwin-1.5.25-15
+  cygport-0.4.2-1
+  gawk-3.1.6-1
   make-3.81-1
-  sed-4.1.5-1
+  sed-4.1.5-2
 
 Canonical website:
   http://xorg.freedesktop.org/
 
 Canonical download:
-  http://xorg.freedesktop.org/releases/individual/
+  http://xorg.freedesktop.org/releases/individual/util/
 
 -------------------------------------------
 
@@ -161,6 +161,9 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 1.0.2-4 -----
+Removed libXaw8 (Xprint obsolete) and fixed other options.
 
 ----- version 1.0.2-3 -----
 Removed versioning from import library and fixed redefinition warning.
