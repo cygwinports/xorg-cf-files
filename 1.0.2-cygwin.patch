@@ -34,6 +34,15 @@
  
  #define AvoidNullMakeCommand	YES
  #define StripInstalledPrograms	YES
+@@ -406,7 +401,7 @@
+ # define BuildGlxExt		YES	/* Not enabled by default */
+ #endif
+ #ifndef BuildXprintLib
+-# define BuildXprintLib		YES     /* Not enabled when Xprt disabled */
++# define BuildXprintLib		NO     /* Not enabled when Xprt disabled */
+ #endif
+ #ifndef BuildXterm
+ # define BuildXterm		NO	/* Built separately on Cygwin */
 --- origsrc/xorg-cf-files-1.0.2/cygwin.rules	2005-05-19 13:53:42.000000000 -0500
 +++ src/xorg-cf-files-1.0.2/cygwin.rules	2006-08-17 18:38:56.849875000 -0500
 @@ -59,7 +59,7 @@

@@ -1,3 +1,5 @@
 inherit xorg
 
 PATCH_URI="1.0.2-cygwin.patch"
+
+DIFF_EXCLUDES="site.def"
