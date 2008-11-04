@@ -162,6 +162,9 @@ Files included in the binary package:
 
 Port Notes:
 
+----- version 1.0.2-5 -----
+Fixed app-defaults directory.
+
 ----- version 1.0.2-4 -----
 Removed libXaw8 (Xprint obsolete) and fixed other options.
 
