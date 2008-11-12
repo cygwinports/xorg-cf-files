@@ -162,6 +162,9 @@ Files included in the binary package:
 
 Port Notes:
 
+----- version 1.0.2-6 -----
+Unbreak linking against libXaw7.
+
 ----- version 1.0.2-5 -----
 Fixed app-defaults directory.
 

@@ -71,15 +71,6 @@
  # define BuildXterm		NO	/* Built separately on Cygwin */
 --- origsrc/xorg-cf-files-1.0.2/cygwin.rules	2005-05-19 13:53:42.000000000 -0500
 +++ src/xorg-cf-files-1.0.2/cygwin.rules	2008-11-04 10:58:30.540801300 -0600
-@@ -11,7 +11,7 @@
- #ifndef NormalLibX11
- # define NormalLibX11		NO
- #endif
--#define SharedLibXaw		YES
-+#define SharedLibXaw		NO
- #define SharedLibXmu		YES
- #define SharedLibXt		YES
- #define SharedLibFont		NO
 @@ -22,11 +22,11 @@
  #define SharedLibXext		YES
  #define SharedLibXi		YES
@@ -133,9 +124,9 @@
  XMULIB = $(XMULIBONLY) $(XTOOLLIB) $(XLIB)
  #endif
  
-+XAWLIB = -lXaw7
-+XAW7LIB = -lXaw7
-+XAW6LIB = -lXaw6
++#ifndef SharedXawRev
++# define SharedXawRev 7.0
++#endif
 +
  #ifndef XawClientLibs
  # define XawClientLibs $(XAWLIB) $(XMULIBONLY) $(XTOOLLIB) $(XPMLIB) $(EXTRAXAWCLIENTLIBS) $(XLIB)
