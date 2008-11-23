@@ -153,7 +153,6 @@ Files included in the binary package:
   /usr/lib/X11/config/xorg.tmpl
   /usr/lib/X11/config/xorgsite.def
   /usr/lib/X11/config/xorgversion.def
-  /usr/share/doc/Cygwin/xorg-cf-files-1.0.2.README
   /usr/share/doc/xorg-cf-files-1.0.2/COPYING
   /usr/share/doc/xorg-cf-files-1.0.2/ChangeLog
   /usr/share/doc/xorg-cf-files-1.0.2/README
@@ -161,6 +160,9 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 1.0.2-7 -----
+Fix definitions of MANPATH, FONTDIR, and ENCODINGSDIR.
 
 ----- version 1.0.2-6 -----
 Unbreak linking against libXaw7.
