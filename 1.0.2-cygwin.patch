@@ -62,7 +62,15 @@
  #endif
  #ifndef BuildXWinNativeGDI
  # define BuildXWinNativeGDI	NO
-@@ -400,13 +399,13 @@
+@@ -364,7 +372,6 @@
+ #define XWinServerDefines	-DPIXPRIV \
+ 				-DXFree86Server \
+ 				-DX_BYTE_ORDER=ByteOrder \
+-				XvExtensionDefines \
+ 				XWinXF86ConfigDefines XWinNativeGDIDefines \
+ 				XWinPrimaryFBDefines \
+ 				XWinEmulatePseudoDefines \
+@@ -400,13 +398,13 @@
  # define BuildRandR		YES	/* Not supported by XWin Server */
  #endif
  #ifndef BuildXF86BigfontExt
