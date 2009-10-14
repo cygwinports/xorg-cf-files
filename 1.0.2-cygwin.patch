@@ -53,15 +53,6 @@
  
  #define AvoidNullMakeCommand	YES
  #define StripInstalledPrograms	YES
-@@ -292,7 +291,7 @@
- # define BuildXWinMultiWindow	YES
- #endif
- #ifndef BuildXWinMultiWindowExtWM
--# define BuildXWinMultiWindowExtWM YES
-+# define BuildXWinMultiWindowExtWM NO
- #endif
- #ifndef BuildXWinNativeGDI
- # define BuildXWinNativeGDI	NO
 @@ -364,7 +372,6 @@
  #define XWinServerDefines	-DPIXPRIV \
  				-DXFree86Server \
@@ -70,14 +61,7 @@
  				XWinXF86ConfigDefines XWinNativeGDIDefines \
  				XWinPrimaryFBDefines \
  				XWinEmulatePseudoDefines \
-@@ -400,13 +398,13 @@
- # define BuildRandR		YES	/* Not supported by XWin Server */
- #endif
- #ifndef BuildXF86BigfontExt
--# define BuildXF86BigfontExt	YES	/* Not enabled by default */
-+# define BuildXF86BigfontExt	NO	/* Not enabled by default */
- #endif
- #ifndef BuildGlxExt
+@@ -406,7 +404,7 @@
  # define BuildGlxExt		YES	/* Not enabled by default */
  #endif
  #ifndef BuildXprintLib
