@@ -53,6 +53,15 @@
  
  #define AvoidNullMakeCommand	YES
  #define StripInstalledPrograms	YES
+@@ -246,7 +246,7 @@
+  * -DFD_SETSIZE=256 is needed for xfs and the xserver. cygwin defines the
+  * FD_SETSIZE as 64 but some code expects it to be larger. 
+  */ 
+-#define StandardDefines		-D__i386__ -DWIN32_LEAN_AND_MEAN -DX_LOCALE \
++#define StandardDefines		-D__i386__ -DWIN32_LEAN_AND_MEAN \
+ 				-D_X86_ -D__CYGWIN__ -D_XOPEN_SOURCE \
+ 				-D_POSIX_C_SOURCE=199309L -D_BSD_SOURCE \
+ 				-D_SVID_SOURCE -D_GNU_SOURCE -DFD_SETSIZE=256 \
 @@ -364,7 +372,6 @@
  #define XWinServerDefines	-DPIXPRIV \
  				-DXFree86Server \
