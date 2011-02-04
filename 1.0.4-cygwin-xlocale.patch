@@ -1,0 +1,11 @@
+--- origsrc/xorg-cf-files-1.0.4/cygwin.cf	2009-10-16 16:45:42.000000000 -0500
++++ src/xorg-cf-files-1.0.4/cygwin.cf	2011-02-03 22:37:20.156937400 -0600
+@@ -240,7 +240,7 @@
+  * -DFD_SETSIZE=256 is needed for xfs and the xserver. cygwin defines the
+  * FD_SETSIZE as 64 but some code expects it to be larger. 
+  */ 
+-#define StandardDefines		-D__i386__ -DWIN32_LEAN_AND_MEAN -DX_LOCALE \
++#define StandardDefines		-D__i386__ -DWIN32_LEAN_AND_MEAN \
+ 				-D_X86_ -D__CYGWIN__ -D_XOPEN_SOURCE \
+ 				-D_POSIX_C_SOURCE=199309L -D_BSD_SOURCE \
+ 				-D_SVID_SOURCE -D_GNU_SOURCE -DFD_SETSIZE=256 \
