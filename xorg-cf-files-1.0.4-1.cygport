@@ -1,5 +1,0 @@
-inherit xorg
-
-PATCH_URI="1.0.4-cygwin-xlocale.patch"
-
-DIFF_EXCLUDES="site.def"

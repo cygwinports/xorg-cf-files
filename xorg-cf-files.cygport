@@ -1,0 +1,12 @@
+inherit xorg
+
+NAME="xorg-cf-files"
+VERSION=1.0.5
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="Imake config files"
+DESCRIPTION="X.Org Imake config files"
+
+PATCH_URI="1.0.5-cygwin-xlocale.patch"
+
+DIFF_EXCLUDES="site.def"
