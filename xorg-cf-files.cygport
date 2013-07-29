@@ -7,6 +7,6 @@ CATEGORY="Devel"
 SUMMARY="Imake config files"
 DESCRIPTION="X.Org Imake config files"
 
-PATCH_URI="1.0.5-cygwin-xlocale.patch"
+PATCH_URI="1.0.5-cygwin64.patch"
 
 DIFF_EXCLUDES="site.def"

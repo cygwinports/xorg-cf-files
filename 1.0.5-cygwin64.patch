@@ -1,0 +1,46 @@
+--- origsrc/xorg-cf-files-1.0.5/cygwin.cf	2013-07-23 00:23:14.000000000 -0500
++++ src/xorg-cf-files-1.0.5/cygwin.cf	2013-07-29 01:24:13.222731200 -0500
+@@ -236,12 +236,20 @@
+ # define OptimizedCDebugFlags	-O2 -fno-strength-reduce
+ #endif
+ 
++#ifdef i386Architecture
++# define CygwinMachineDefines	-D__i386__ -D_X86_ -D__CYGWIN32__
++#endif
++
++#ifdef AMD64Architecture
++# define CygwinMachineDefines	-D__x86_64__ -D__amd64__
++#endif
++
+ /*
+  * -DFD_SETSIZE=256 is needed for xfs and the xserver. cygwin defines the
+  * FD_SETSIZE as 64 but some code expects it to be larger.
+  */
+-#define StandardDefines		-D__i386__ -DWIN32_LEAN_AND_MEAN -DX_LOCALE \
+-				-D_X86_ -D__CYGWIN__ -D_XOPEN_SOURCE \
++#define StandardDefines		CygwinMachineDefines -DWIN32_LEAN_AND_MEAN \
++				-D__CYGWIN__ -D_XOPEN_SOURCE \
+ 				-D_POSIX_C_SOURCE=199309L -D_BSD_SOURCE \
+ 				-D_SVID_SOURCE -D_GNU_SOURCE -DFD_SETSIZE=256 \
+ 				-DXResExtension
+--- origsrc/xorg-cf-files-1.0.5/cygwin.rules	2013-07-23 00:23:14.000000000 -0500
++++ src/xorg-cf-files-1.0.5/cygwin.rules	2013-07-29 01:26:20.664020400 -0500
+@@ -318,8 +318,7 @@ all:: binary								@@\
+ 
+ /*
+  * ProfiledRelocatableTarget - generate rules to produce a  profiled
+- * relocatable object file instead of a library.  Differs from Imake.rules
+- * by passing '--oformat pe-i386' to ld.
++ * relocatable object file instead of a library.
+  */
+ 
+ #ifndef ProfiledRelocatableTarget
+@@ -328,7 +327,7 @@ AllTarget(Concat(objname,_p.Osuf))					@
+ 									@@\
+ Concat(objname,_p.Osuf): objlist $(EXTRALIBRARYDEPS)			@@\
+ 	RemoveFile($@)							@@\
+-	$(LD) -X -r --oformat pe-i386 objlist -o $@
++	$(LD) -X -r objlist -o $@
+ 
+ #endif /* ProfiledRelocatableTarget */
+ 
