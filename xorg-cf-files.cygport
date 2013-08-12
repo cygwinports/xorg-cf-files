@@ -2,7 +2,7 @@ inherit xorg
 
 NAME="xorg-cf-files"
 VERSION=1.0.5
-RELEASE=1
+RELEASE=2
 CATEGORY="Devel"
 SUMMARY="Imake config files"
 DESCRIPTION="X.Org Imake config files"

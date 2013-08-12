@@ -1,3 +1,32 @@
+--- origsrc/xorg-cf-files-1.0.5/Imake.cf	2013-07-23 00:23:14.000000000 -0500
++++ src/xorg-cf-files-1.0.5/Imake.cf	2013-08-12 01:53:02.962584900 -0500
+@@ -50,13 +50,19 @@ XCOMM $XFree86: xc/config/cf/Imake.cf,v
+ #define MacroIncludeFile <cygwin.cf>
+ #define MacroFile cygwin.cf
+ #define cygwinArchitecture
+-#define i386Architecture
+-#undef i386
+-#undef i486
+-#undef i586
+-#undef i686
+-#undef __i386__
+-#undef _X86_
++# ifdef __i386__
++#  define i386Architecture
++#  undef __i386__
++#  undef _X86_
++#  undef i386
++#  undef i486
++#  undef i586
++#  undef i686
++# endif
++# ifdef __x86_64__
++#  define AMD64Architecture
++#  undef __x86_64__
++# endif
+ #undef __CYGWIN__
+ #endif /* CYGWIN */
+ 
 --- origsrc/xorg-cf-files-1.0.5/cygwin.cf	2013-07-23 00:23:14.000000000 -0500
 +++ src/xorg-cf-files-1.0.5/cygwin.cf	2013-07-29 01:24:13.222731200 -0500
 @@ -236,12 +236,20 @@
